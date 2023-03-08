@@ -1,5 +1,4 @@
 .register-container {
-  /* border: 1px solid red; */
   display: flex;
   justify-content: center;
   margin-top: 2rem;
@@ -12,6 +11,12 @@
   flex-direction: column;
   width: 20rem;
   padding: 2rem 3.5rem;
+  margin: 0 2rem;
+}
+
+.registration-error-message {
+  font-size: 0.8rem;
+  margin-top: 0rem;
 }
 
 .register-input {
@@ -20,9 +25,7 @@
 }
 
 .register-button {
-  /* width: 7rem;
-  margin: 0 auto; */
-  margin-top: 2em;
+  margin-top: 1em;
   padding: 0.5rem;
 }
 
