@@ -6,6 +6,7 @@ function validateUserCredentials(credentials) {
   const username = credentials.username;
   const email = credentials.email;
   const password = credentials.password;
+  const confirmPassword = credentials.confirmPassword;
 
   if (!username || !email || !password) {
     throw new Error('All fields are required!');
@@ -24,13 +25,16 @@ function validateUserCredentials(credentials) {
       'The password must contain at least one special character and at least one number'
     );
   }
+  if (password !== confirmPassword) {
+    throw new Error('Passwords dont match');
+  }
 }
 
 const createUser = async (newUserInfo) => {
   try {
     validateUserCredentials(newUserInfo);
   } catch (error) {
-    return { error: true, message: error.message };
+    return { message: error.message };
   }
 
   const dbUser = await user.findOne({
@@ -45,9 +49,9 @@ const createUser = async (newUserInfo) => {
     newUserInfo.password = await bcrypt.hash(newUserInfo.password, 10);
     try {
       await user.create(newUserInfo);
-      return { error: false, message: 'Registration successful' };
+      return { message: 'Registration successful' };
     } catch (error) {
-      return { error: true, message: { error } };
+      return { message: { error } };
     }
   }
 };
