@@ -52,7 +52,6 @@ export default function RegisterForm() {
         setRegistrationMessage(responseBody.message);
       }
     } catch (error) {
-      console.log(error);
       setRegistrationMessage('Server Error');
     }
   };
