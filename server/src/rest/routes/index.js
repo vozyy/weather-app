@@ -4,6 +4,6 @@ import baseRouter from './baseRouter';
 import userRouter from './userRouter';
 
 router.use(baseRouter);
-router.use(userRouter);
+router.use('/api/user', userRouter);
 
 export default router;
