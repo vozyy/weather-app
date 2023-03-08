@@ -1,0 +1,32 @@
+.register-container {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.register-form {
+  border: 1px solid red;
+  border-radius: 5%;
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  padding: 2rem 3.5rem;
+}
+
+.register-input {
+  margin-bottom: 1rem;
+  padding: 0.2rem;
+}
+
+.register-button {
+  /* width: 7rem;
+  margin: 0 auto; */
+  margin-top: 2em;
+  padding: 0.5rem;
+}
+
+.redirect-to-login {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
