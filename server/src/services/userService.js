@@ -44,7 +44,7 @@ const createUser = async (newUserInfo) => {
   });
 
   if (dbUser) {
-    return { error: 'Email already in use' };
+    return { message: 'Email already in use' };
   } else {
     newUserInfo.password = await bcrypt.hash(newUserInfo.password, 10);
     try {
